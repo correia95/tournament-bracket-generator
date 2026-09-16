@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tournament-bracket-generator.correia95.workers.dev/sitemap.xml

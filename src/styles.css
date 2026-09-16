@@ -1,0 +1,94 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f0f4f8;
+  --card: #ffffff;
+  --card-2: #eef2f6;
+  --ink: #0c1f2e;
+  --ink-soft: #536a7a;
+  --line: #c6d6e0;
+  --brand: #7c3aed;
+  --good: #15803d;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1620;
+    --card: #10202c;
+    --card-2: #17303f;
+    --ink: #e6eef4;
+    --ink-soft: #90a7b6;
+    --line: #223a4a;
+    --brand: #c4b5fd;
+    --good: #4ade80;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.page { max-width: 980px; margin: 0 auto; padding: 22px 16px 60px; }
+h1 { font-size: clamp(1.4rem, 4.2vw, 1.9rem); margin: 0 0 6px; letter-spacing: -0.02em; }
+.lede { color: var(--ink-soft); margin: 0 0 18px; max-width: 68ch; font-size: 0.92rem; }
+
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; }
+.panel h2 { font-size: 0.92rem; margin: 0 0 10px; color: var(--ink-soft); }
+
+.title-input {
+  width: 100%; font: inherit; font-size: 0.95rem; padding: 8px 10px; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--card); color: var(--ink);
+}
+.names-input {
+  width: 100%; font: inherit; font-size: 0.9rem; padding: 8px 10px; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--card); color: var(--ink); resize: vertical;
+}
+.button-row { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+.primary-btn {
+  border: none; background: var(--brand); color: #1a0a33; font: inherit; font-weight: 700;
+  padding: 9px 16px; border-radius: 9px; cursor: pointer;
+}
+.secondary-btn {
+  border: 1px solid var(--line); background: var(--card); color: var(--ink); font: inherit; font-weight: 700;
+  padding: 9px 16px; border-radius: 9px; cursor: pointer;
+}
+.hint { font-size: 0.8rem; color: var(--ink-soft); margin: 10px 0 0; }
+
+.result { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin-bottom: 20px; text-align: center; }
+.result.positive { border-color: var(--good); }
+.verdict { margin: 0; font-size: 1.05rem; }
+
+.bracket-wrap { overflow-x: auto; margin-bottom: 20px; padding-bottom: 8px; }
+.bracket { display: flex; gap: 28px; min-width: max-content; padding: 4px 2px; }
+.round-col { display: flex; flex-direction: column; justify-content: space-around; gap: 12px; min-width: 160px; }
+.round-title { font-size: 0.78rem; color: var(--ink-soft); text-align: center; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+.match { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; background: var(--card); }
+.slot {
+  display: block; width: 100%; text-align: left; font: inherit; font-size: 0.88rem;
+  padding: 8px 10px; border: none; background: var(--card); color: var(--ink); cursor: pointer;
+  border-bottom: 1px solid var(--line);
+}
+.slot:last-child { border-bottom: none; }
+.slot:disabled { cursor: default; color: var(--ink-soft); }
+.slot:not(:disabled):hover { background: var(--card-2); }
+.slot.winner { background: var(--brand); color: #1a0a33; font-weight: 700; }
+.tbd { color: var(--ink-soft); font-style: italic; }
+
+.actions { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+.share-btn {
+  border: 1px solid var(--line); background: var(--card); color: var(--ink); font: inherit; font-weight: 700;
+  padding: 9px 18px; border-radius: 9px; cursor: pointer;
+}
+
+.explainer { margin-top: 36px; border-top: 1px solid var(--line); padding-top: 10px; }
+.explainer h2 { font-size: 1.1rem; margin: 18px 0 8px; }
+.explainer h3 { font-size: 0.96rem; margin: 16px 0 6px; }
+.explainer p { color: var(--ink-soft); font-size: 0.9rem; }
+
+@media (max-width: 640px) {
+  .round-col { min-width: 130px; }
+  .bracket { gap: 18px; }
+}

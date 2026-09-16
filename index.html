@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#7c3aed" />
+
+    <title>Tournament Bracket Generator — single-elimination brackets with automatic byes</title>
+    <meta
+      name="description"
+      content="Paste a list of names and get a single-elimination tournament bracket, with automatic byes for fields that aren't a power of two. Click through winners round by round and share the bracket with a link. Free, runs entirely in your browser."
+    />
+    <link rel="canonical" href="https://tournament-bracket-generator.correia95.workers.dev/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tournament Bracket Generator" />
+    <meta property="og:description" content="Single-elimination brackets from a list of names, with automatic byes. Free, in your browser." />
+    <meta property="og:url" content="https://tournament-bracket-generator.correia95.workers.dev/" />
+    <meta property="og:image" content="https://tournament-bracket-generator.correia95.workers.dev/og.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tournament Bracket Generator" />
+    <meta name="twitter:description" content="Single-elimination brackets from a list of names, with automatic byes. Free, in your browser." />
+    <meta name="twitter:image" content="https://tournament-bracket-generator.correia95.workers.dev/og.svg" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Tournament Bracket Generator",
+        "url": "https://tournament-bracket-generator.correia95.workers.dev/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Generates a single-elimination tournament bracket from a list of names, seeding pairs from opposite ends of the field and auto-advancing byes when the field isn't a power of two, with click-to-advance winners and a shareable link."
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What happens with an odd number of participants?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The bracket size rounds up to the next power of two, and the extra slots become byes - automatic advances for the participants without an opponent in round 1."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I change a pick after making it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes - click the other name in that match. Any picks in later rounds that depended on it are cleared automatically so the bracket never shows an inconsistent state."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the share link update live for people I send it to?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No - it's a snapshot of the bracket and picks at the moment you copy it. Copy a new link after making more picks."
+            }
+          }
+        ]
+      }
+    </script>
+    <style>
+      .tt-nav { box-sizing: border-box; width: 100%; margin: 0; background: #f1f1f4; border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+      .tt-nav a { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; text-decoration: none; color: #3730a3; font: 600 13px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      .tt-nav a:hover { color: #1e1b4b; text-decoration: underline; }
+      .tt-nav svg { width: 14px; height: 14px; flex: none; }
+      @media (prefers-color-scheme: dark) {
+        .tt-nav { background: #15151b; border-bottom-color: rgba(255, 255, 255, 0.12); }
+        .tt-nav a { color: #c7d2fe; }
+        .tt-nav a:hover { color: #e0e7ff; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="tt-nav"><a href="https://tinytools.correia95.workers.dev/" aria-label="TinyTools home — all tools and games"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 2 11h3v9h5v-6h4v6h5v-9h3z"/></svg><span>TinyTools</span></a></nav>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <noscript>
+      <p style="text-align: center; padding: 20px">
+        This bracket generator needs JavaScript to run in your browser.
+      </p>
+    </noscript>
+  </body>
+</html>
