@@ -92,3 +92,9 @@ h1 { font-size: clamp(1.4rem, 4.2vw, 1.9rem); margin: 0 0 6px; letter-spacing: -
   .round-col { min-width: 130px; }
   .bracket { gap: 18px; }
 }
+
+/* a11y-contrast-fixes (auto, WCAG AA 4.5:1) */
+@media (prefers-color-scheme: light) {
+  .primary-btn { color: #ffffff; }
+  .slot.winner { color: #ffffff; }
+}
